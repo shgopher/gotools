@@ -1,7 +1,7 @@
 package sort
 
 import "github.com/googege/gotools/public"
-
+// when n < 1000, this is better.
 func BubbleSort(arr []int) {
 
 	for i := 0; i < len(arr); i++ {
