@@ -4,7 +4,10 @@ basic tools in GO
 ## list
 |name|usage|
 |:---:|:---:|
-|pass|pass|
+|list|限流算法|
+|sort|排序算法|
+|id|唯一id生成算法|
+|str|字符串匹配算法|
 ## HERE
 |项目|介绍|
 |:---:|:---:|
