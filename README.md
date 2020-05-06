@@ -1,13 +1,12 @@
 # gotools
 basic tools in GO
-
 ## list
-|name|usage|
+|list|description|
 |:---:|:---:|
-|list|限流算法|
-|sort|排序算法|
-|id|唯一id生成算法|
-|str|字符串匹配算法|
+|id|Unique id generation algorithm, support distributed|
+|sort|sort algorithm like quick sort,merge sort|
+|limit|Current limit algorithm|
+|str|String matching algorithm like  kmp trie and ac auto etc.|
 ## HERE
 |项目|介绍|
 |:---:|:---:|
