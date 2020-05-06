@@ -23,4 +23,3 @@ func BenchmarkSort(b *testing.B) {
 		sort.Ints(data)
 	}
 }
-

@@ -11,7 +11,7 @@ const (
 	MAX_WORK         = 12
 	MAX_NUMBER_VALUE = 0x3ff
 	MAX_WORK_VALUE   = 0xfff
-	OFFSET_TIME      = MAX_NUMBER+MAX_WORK
+	OFFSET_TIME      = MAX_NUMBER + MAX_WORK
 	OFFSET_WORK      = MAX_NUMBER
 )
 
@@ -19,18 +19,18 @@ var (
 	oldNow int64 = 1588760321035
 )
 
-
 type SnowFlake struct {
 	sync.Mutex
 	timeStamp int64
-	workNode int64
-	number int64
+	workNode  int64
+	number    int64
 }
-func NewSnowFlake(workNode int64)(*SnowFlake,error) {
+
+func NewSnowFlake(workNode int64) (*SnowFlake, error) {
 	if workNode > MAX_WORK_VALUE || workNode < 0 {
-		return nil,fmt.Errorf("input workNode too big or < 0 ,right one is [0, 2^12+2^11+...2^0]")
+		return nil, fmt.Errorf("input workNode too big or < 0 ,right one is [0, 2^12+2^11+...2^0]")
 	}
-	return &SnowFlake{workNode: workNode},nil
+	return &SnowFlake{workNode: workNode}, nil
 }
 
 func (s *SnowFlake) GetID() int64 {
@@ -44,9 +44,9 @@ func (s *SnowFlake) GetID() int64 {
 				now = time.Now().UnixNano() / 1e6
 			}
 		}
-	}else {
-		s.number= 0
+	} else {
+		s.number = 0
 		s.timeStamp = now
 	}
-	return (s.timeStamp-oldNow) << OFFSET_TIME | s.workNode << OFFSET_WORK|s.number
+	return (s.timeStamp-oldNow)<<OFFSET_TIME | s.workNode<<OFFSET_WORK | s.number
 }

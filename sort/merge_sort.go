@@ -7,7 +7,7 @@ func MergeSort(arr []int) []int {
 
 func mergeSort(left, right int, arr []int) []int {
 	//stop
-	if right - left < 2 {
+	if right-left < 2 {
 		return arr[left:right]
 	}
 	//process

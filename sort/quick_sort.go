@@ -3,6 +3,7 @@ package sort
 import (
 	"github.com/googege/gotools/public"
 )
+
 // todo for pro.
 func QuickSort(arr []int) []int {
 	quickSort(0, len(arr)-1, arr)

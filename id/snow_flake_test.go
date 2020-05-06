@@ -7,16 +7,16 @@ import (
 )
 
 var (
-	count = 100000
+	count = 10000
 )
 
 func TestNewSnowFlake(t *testing.T) {
-	snowFlake(10)
+	snowFlake(9)
 }
 func TestNewSnowFlake2(t *testing.T) {
 	wa := new(sync.WaitGroup)
-	wa.Add(10)
-	for i := 0;i< 10;i++ {
+	for i := 0; i < 20; i++ {
+		wa.Add(1)
 		t := int64(i)
 		go func(t int64) {
 			defer wa.Done()
@@ -24,30 +24,33 @@ func TestNewSnowFlake2(t *testing.T) {
 		}(t)
 	}
 	wa.Wait()
-
 }
-
-func snowFlake(wrokid int64)  {
+func BenchmarkSnowFlake_GetID(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		snowFlake(10)
+	}
+}
+func snowFlake(wrokid int64) {
 	sf, err := NewSnowFlake(wrokid)
 	if err != nil {
 		fmt.Println(err)
 	}
 	ch := make(chan int64)
-	ma := make(map[int64]int)
+	mp := new(sync.Map)
 	for i := 0; i < count; i++ {
 		go func() {
 			ch <- sf.GetID()
 		}()
 	}
-	L:
+L:
 	for i := 0; i < count; i++ {
 		select {
 		case d := <-ch:
-			if _,ok := ma[d];ok {
-				fmt.Println("bad")
-				break L
+			if _, ok := mp.Load(d); ok {
+				fmt.Println("bad", d)
+				//break L
 			}
-			ma[d]++
+			mp.Store(d,1)
 		default:
 			break L
 		}
