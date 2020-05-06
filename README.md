@@ -2,9 +2,10 @@
 basic tools in GO
 
 ## list
-|name|usage|
+|list|description|
 |:---:|:---:|
-|pass|pass|
+|id|Unique id generation algorithm, support distributed|
+|sort||
 ## HERE
 |项目|介绍|
 |:---:|:---:|
