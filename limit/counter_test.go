@@ -7,7 +7,7 @@ import (
 )
 
 func TestConter(t *testing.T) {
-	c := NewConter(2, time.Second)
+	c := NewConter(30, time.Minute)
 	for i:= 0;i < 10;i++ {
 		go func() {
 			for {
