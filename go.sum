@@ -1,2 +1,6 @@
+github.com/googege/godata v0.7.0 h1:kHoJ4a2sVIRisdTKxneCTrP8JpwcTTjjhFU/juMxH24=
+github.com/googege/godata v0.7.0/go.mod h1:A/5/f6RN0WjJFrMGDnNcFolIQ2eiRgIlXSWWAU5UddQ=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/spaolacci/murmur3 v1.1.0 h1:7c1g84S4BPRrfL5Xrdp6fOJ206sU9y293DDHaoy0bLI=
+github.com/spaolacci/murmur3 v1.1.0/go.mod h1:JwIasOWyU6f++ZhiEuf87xNszmSA2myDM2Kzu9HwQUA=
