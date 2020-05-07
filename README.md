@@ -6,7 +6,7 @@ basic tools in GO
 |id|Unique id generation algorithm, support distributed|
 |sort|sort algorithm like quick sort,merge sort|
 |limit|Current limit algorithm|
-|str|String matching algorithm like  kmp trie and ac auto etc.**[just finish trie]**|
+|str|String matching algorithm like  trie and  auto etc.|
 ## HERE
 |项目|介绍|
 |:---:|:---:|
