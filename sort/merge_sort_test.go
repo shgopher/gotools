@@ -1,14 +1,13 @@
 package sort
 
 import (
-	"fmt"
 	"github.com/googege/gotools/test"
 	"testing"
 )
 
 func TestMergeSort(t *testing.T) {
 	data := test.TestDatasSliceInt(10)
-	fmt.Println(MergeSort(data))
+	t.Log(MergeSort(data))
 }
 func BenchmarkMergeSort(b *testing.B) {
 	data := test.TestDatasSliceInt(10000000)

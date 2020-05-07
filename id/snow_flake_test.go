@@ -33,7 +33,7 @@ func BenchmarkSnowFlake_GetID(b *testing.B) {
 func snowFlake(wrokid int64) {
 	sf, err := NewSnowFlake(wrokid)
 	if err != nil {
-		fmt.Println(err)
+		t.Log(err)
 	}
 	ch := make(chan int64)
 	mp := new(sync.Map)
@@ -47,7 +47,7 @@ L:
 		select {
 		case d := <-ch:
 			if _, ok := mp.Load(d); ok {
-				fmt.Println("bad", d)
+				t.Log("bad", d)
 				//break L
 			}
 			mp.Store(d,1)

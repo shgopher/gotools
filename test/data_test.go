@@ -1,12 +1,11 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestTestDatasSliceInt(t *testing.T) {
-	fmt.Println(TestDatasSliceInt(10))
+	t.Log(TestDatasSliceInt(10))
 }
 func BenchmarkTestDatasSliceInt(b *testing.B) {
 

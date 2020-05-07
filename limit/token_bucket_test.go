@@ -1,20 +1,19 @@
 package limit
 
 import (
-	"fmt"
 	"testing"
 	"time"
 )
 
 func TestTokenBucket(t *testing.T) {
-	tb := NewTokenBucket(10,time.Minute)
+	tb := NewTokenBucket(1,time.Second)
 	for i := 0;i < 2;i++ {
 		go func() {
 			for {
 				tb.Run()
-				fmt.Println("runing")
+				t.Log("runing")
 			}
 		}()
 	}
-	time.Sleep(time.Second*100)
+	time.Sleep(time.Second*50)
 }

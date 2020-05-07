@@ -6,11 +6,11 @@ import (
 )
 
 func TestNewUUID(t *testing.T) {
-	fmt.Println(NewUUID(1, nil))
-	fmt.Println(NewUUID(2, nil))
-	fmt.Println(NewUUID(3, []byte("nil")))
-	fmt.Println(NewUUID(4, nil))
-	fmt.Println(NewUUID(5, []byte("nil")))
+	t.Log(NewUUID(1, nil))
+	t.Log(NewUUID(2, nil))
+	t.Log(NewUUID(3, []byte("nil")))
+	t.Log(NewUUID(4, nil))
+	t.Log(NewUUID(5, []byte("nil")))
 }
 
 func BenchmarkNewUUID_Version1(b *testing.B) {
