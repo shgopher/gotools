@@ -12,6 +12,7 @@ func NewTokenBucket(maxCount int64,interval time.Duration)*TokenBucket {
 	t := TokenBucket{}
 	t.tokenPool =  make(chan bool,maxCount)
 	go func() {
+		// it mean  how many time per time.
 		ti := time.NewTicker(time.Duration(interval.Nanoseconds()/(maxCount*1000*1000))* time.Millisecond)
 		for  {
 			select {
