@@ -6,15 +6,14 @@ type Trie struct {
 	Value *godata.Trie
 }
 
-func (t *Trie) IsExit(v interface{}) bool {
-	vt := v.(string)
-	b, _ := t.Value.StartsWith(vt)
+func (t *Trie) IsExit(v string) bool {
+	b, _ := t.Value.StartsWith(v)
 	return b
 }
-func (t *Trie) Insert(v interface{}) {
-	t.Value.Insert(v.(string))
+func (t *Trie) Insert(v string) {
+	t.Value.Insert(v)
 }
 // return a new Trie.
-func NewTrie() Str {
+func NewTrie() *Trie {
 	return &Trie{Value: godata.NewTrie()}
 }
