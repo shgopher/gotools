@@ -6,6 +6,7 @@ basic tools in GO
 |id|Unique id generation algorithm, support distributed|
 |sort|sort algorithm like quick sort,merge sort|
 |limit|Current limit algorithm|
+|Read file's path name|read file's path name,and the children folder's file path name|
 ## HERE
 |项目|介绍|
 |:---:|:---:|
